@@ -1,0 +1,171 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.main h1{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 50px;
+line-height: 24px;
+display: flex;
+align-items: center;
+margin: 2vh 0;
+color: #4CAF4F;
+}
+
+.main p{
+width: 82vw;
+margin-top: 20px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 27px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.015em;
+color: #717171;
+}
+
+.main img{
+width: 92vw;
+margin-top: 2vh;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+/*product*/
+
+#product1 .pro-container{
+  display: flex;
+  gap: 15px;
+  padding: 0px 15px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  font-family: 'poppins';
+  justify-content: center;
+}
+#product1 .pro{
+  width: 24%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product1 .pro:hover{
+  box-shadow: 20px 20px 30px rgba(0,0,0,0.06);
+
+}
+
+#product1 .pro img{
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .des{
+  text-align: start;
+  padding: 10px 0;
+}
+#product1 .pro .des span{
+  color:grey;
+  font-size: 14px;
+}
+
+#product1 .pro .des h5{
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 17px;
+}
+
+.pro a i{
+  font-size: 24px;
+  
+}
+
+
+
+
+
+@media(max-width:526px) {
+
+  .main{
+    width: 100%;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+.main h1{
+width: 100%;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 24px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 4vh;
+    }
+
+    .main p{
+width: 100%;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 27px;
+text-align: center;
+justify-content: center;
+letter-spacing: 0.015em;
+margin: 0px;
+}
+
+    .main img{
+        display: none;
+    }
+
+
+    #product .pro{
+      width: 100%;
+  }
+  #product1 .pro-container{
+    justify-content: center;
+  }
+    
+
+}
+
+@media(max-width:992px) and (min-width: 527px){
+  .main h1{
+    font-size: 40px;
+  }
+  .main p{
+    font-size: 16px;
+  }
+  #product1 .pro-container {
+
+    justify-content: center;
+}
+
+#product1 .pro {
+    margin: 15px ;
+}
+} 
