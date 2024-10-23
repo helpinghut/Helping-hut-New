@@ -14,6 +14,7 @@
 
 .color-btn.active {
     background-color: green;
+    color: #FFFFFF;
 }
 
 #map {
@@ -435,17 +436,15 @@ min-height: 25vh;
 }
 
 .map-btn button~button{
-width: 18vw;
-height: 5vh;
-font-size: 10px;
+width: 25vw;
+height: 6vh;
+font-size: 11px;
 }
 
 .map-btn button{
-    width: 18vw;
-    height: 5vh;
-    font-size: 10px;
+    width: 25vw;
+    height: 6vh;
+    font-size: 11px;
 }
 
 }    
-
-

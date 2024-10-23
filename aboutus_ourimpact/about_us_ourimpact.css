@@ -9,6 +9,7 @@
     align-items: center;
     padding: 0px 15px;
     justify-content: center;
+    margin: 10px 0px;
 }
 
 .arrow{
@@ -16,14 +17,14 @@ cursor: pointer;
 background-color: #4CAF4F;
 height: 50px;
 width: 50px;
+background: none;
 border-radius: 10px;
 }
 
 
 
 .frame {
-    width: 100%; /* Adjust as needed */
-    max-width: 800px; /* Optional: set a max-width if necessary */
+    width: 30%; /* Adjust as needed */
     
     overflow: hidden;
 }
@@ -32,6 +33,7 @@ border-radius: 10px;
     height: auto;
     width: 100%;
 }
+
 
 .slider{
     display: flex;
@@ -296,11 +298,21 @@ border-radius: 4px;
     .arrow{
         height: 30px;
         width: 30px;
+        background: none;
         }
         .don{
             width: 167px;
             height: 36px;
             font-size: 12px;
+                    }
+                    .frame {
+                        width: 100%; /* Adjust as needed */
+                       
+                    }
+                    
+                    .image{
+                        height: auto;
+                        width: 100%;
                     }
 
     .main-para {

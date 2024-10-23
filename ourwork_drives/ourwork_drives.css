@@ -94,8 +94,8 @@ cursor: pointer;
 .highlight{
     text-decoration-line: underline;
     text-decoration-color: #4CAF4F;
-    text-decoration-thickness:10px;
-    text-underline-offset:0.5rem ;
+    text-decoration-thickness:5px;
+    text-underline-offset:0.6rem ;
 }
 
 .header2{
@@ -220,7 +220,7 @@ height: 6vh;
 
     }
     .highlight{
-        text-decoration-thickness:5px;
+        text-decoration-thickness:3px;
     }
 
     .header2{

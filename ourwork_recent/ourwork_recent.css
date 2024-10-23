@@ -10,6 +10,7 @@
     align-items: center;
   padding:0px 15px;
     justify-content: center;
+    margin: 10px 0px;
 }
 
 .arrow{
@@ -17,15 +18,16 @@ cursor: pointer;
 background-color: #4CAF4F;
 height: 50px;
 width: 50px;
+background: none;
+margin: 0px 10px;
 border-radius: 10px;
 }
 
 
 
 .frame {
-    width: 100%; /* Adjust as needed */
-    max-width: 800px; /* Optional: set a max-width if necessary */
-    height: auto;
+    width: 30%; /* Adjust as needed */
+   height: auto;
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -95,8 +97,8 @@ border-radius: 10px;
 .highlight{
     text-decoration-line: underline;
     text-decoration-color: #4CAF4F;
-    text-decoration-thickness:10px;
-    text-underline-offset:0.5rem ;
+    text-decoration-thickness:5px;
+    text-underline-offset:0.6rem ;
 }
 
 .main2{
@@ -280,7 +282,7 @@ width: 24vw;
 
     }
     .highlight{
-        text-decoration-thickness:5px;
+        text-decoration-thickness:3px;
     }
 
     .main2{
@@ -353,6 +355,13 @@ width: 24vw;
     .arrow{
         height: 30px;
         width: 30px;
+    }
+    .frame{
+        width: 100%;
+    }
+    .image{
+        height: auto;
+        width: 100%;
     }
 }
 
