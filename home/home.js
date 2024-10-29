@@ -100,14 +100,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function openWhatsApp() {
-    window.open("https://wa.me/?text=Join%20us%20in%20making%20a%20difference!%20Share%20the%20love%20and%20inspire%20change%20by%20inviting%20friends%20to%20Helping%20Hut.%20Together,%20we%20uplift%20lives%20and%20create%20a%20brighter%20future.%20%20You%20can%20also%20volunteer%20with%20us%20and%20be%20part%20of%20something%20amazing!%20%20Let's%20make%20a%20positive%20impact,%20one%20step%20at%20a%20time.");
+    window.open("https://wa.me/?text=Join%20us%20in%20making%20a%20difference!%20Share%20the%20love%20and%20inspire%20change%20by%20inviting%20friends%20to%20Helping%20Hut.%20Together,%20we%20uplift%20lives%20and%20create%20a%20brighter%20future.%20%20You%20can%20also%20volunteer%20with%20us%20and%20be%20part%20of%20something%20amazing!%20%20Let's%20make%20a%20positive%20impact,%20one%20step%20at%20a%20time.%20%20https://helpinghutngo.in/");
   }
-
-  const morePhotosButton = document.getElementById('morePhotosButton');
-  const extraPhotos = document.getElementById('extraPhotos');
-
-  morePhotosButton.addEventListener('click', () => {
-    extraPhotos.style.display = 'block';
-    morePhotosButton.style.display = 'none';
-  });
   
+  // const showMoreButton = document.querySelector('.show-more');
+  // const hiddenSection = document.querySelector('.hidden-section');
+  
+  // showMoreButton.addEventListener('click', () => {
+  //   hiddenSection.style.display = 'block';
+  // });
