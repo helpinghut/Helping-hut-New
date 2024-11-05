@@ -108,7 +108,7 @@ cursor: pointer;
 }
 
 .campaign{
-    padding-left: 50px;
+    padding:0px 50px;
 }
 
 
@@ -117,7 +117,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 20px;
-width: 90%;
+width: 100%;
 margin-bottom: 90px;
 }
 
@@ -251,7 +251,7 @@ flex-direction: column;
 align-items: flex-start;
 gap: 32px;
 width: 100%;
-padding-left: 15px;
+padding: 0px 15px;
 margin-bottom: 20px;
 }
 
@@ -292,7 +292,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 width: 100%;
-padding-right: 15px;
+padding-right: 0px;
 
 }
 .cam-heading p{
@@ -321,8 +321,7 @@ height: 245.64px;
     height: 10vh;
     width: 100%;
     margin: 20px 0px;
-   
-    box-shadow: 0px 3.25px 4.33333px rgba(0, 0, 0, 0.14), 0px 3.25px 3.25px rgba(0, 0, 0, 0.12), 0px 1.08333px 8.66667px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0.33px 4.33333px rgba(0, 0, 0, 0.14), 0px 3.25px 3.25px rgba(0, 0, 0, 0.12), 0px 1.08333px 8.66667px rgba(0, 0, 0, 0.2);
 
 
 }

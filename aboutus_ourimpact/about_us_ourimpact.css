@@ -282,7 +282,7 @@ border-radius: 4px;
         align-items: flex-start;
         width: 100%;
         margin: 0px;
-        margin-top: 10px;
+        margin-top: 30px;
         padding: 0px 15px;
         height: 88vh;
         justify-content: normal;
@@ -427,7 +427,7 @@ border-radius: 4px;
 
     .main3 h1 {
         width: 100%;
-       
+       padding: 0px 15px;
         font-weight: 600;
         font-size: 25px;
         line-height: normal;
@@ -436,6 +436,9 @@ border-radius: 4px;
         text-align: center;
 
 
+    }
+    .container{
+        margin-top: 30px;
     }
 
   

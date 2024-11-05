@@ -594,12 +594,15 @@ width: 50%;
     }
     .insidefooter2 {
         display: flex;
-        gap: 1vw;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
         width: 100%;
     }
     .insidefooter3{
     display: flex;
     justify-content: start;
+   
     width: 100%;
     }
 
@@ -607,6 +610,7 @@ width: 50%;
         font-size: 12px;
         font-weight: 400;
         padding-left: 0px;
+        text-align: center;
     }
 
     .sign {
@@ -616,7 +620,5 @@ width: 50%;
 
     }
 
-    .insidefooter2 {
-        gap: 15px;
-    }
+   
 }

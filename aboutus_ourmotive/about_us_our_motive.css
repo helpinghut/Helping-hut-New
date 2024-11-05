@@ -167,6 +167,7 @@ flex-direction: column-reverse;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    margin-top: 30px;
 
 }
 .para-container h1{
@@ -177,6 +178,7 @@ flex-direction: column-reverse;
 }
 .para-container p{
     width: auto;
+    margin-top: 0px;
 }
 
 .para-container button{
@@ -210,6 +212,7 @@ padding-right: 15px;
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 30px;
 }
 
 
@@ -377,13 +380,13 @@ font-size: 13px;
     }
     .motive-paras1 img{
 
-        width: 169px;
+        width: auto;
         height: 162.42px;
         
         }
         .motive-paras2 img{
 
-            width: 169px;
+            width: auto;
             height: 162.42px;
             
             }
