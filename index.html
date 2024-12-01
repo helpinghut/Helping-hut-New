@@ -20,6 +20,13 @@
   <script type="text/javascript">
     emailjs.init('ZXrk0xfFDelcBjDAH')
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("img:not([loading])").forEach(img => {
+        img.setAttribute("loading", "lazy");
+      });
+    });
+  </script>
    
     
 </head>
