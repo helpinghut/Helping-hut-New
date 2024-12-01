@@ -14,30 +14,13 @@
     
     <script src="./home/home.js" ></script>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_foOsqgZ3ryu2Emi3plWRo");
-            
-        })();        
-    </script>
-      
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                console.log('SUCCESS!');
-               // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function () {
-                        console.log('SUCCESS!');
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-
-    </script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('ZXrk0xfFDelcBjDAH')
+  </script>
+   
     
 </head>
 
@@ -225,14 +208,14 @@
              <a href="mailto:helpinghutngo@gmail.com"><i class="fa-solid fa-envelope"></i> helpinghutngo@gmail.com</a>
            </div>
            </div>
-          <form id="contact-form">
+          <form  onsubmit="sendEmail(); reset(); return false;">
           <label for="yourname"  class="form-label">First Name</label>
-          <input type="text" id="yourName" placeholder="Name*" required >
+          <input type="text" id="fullName" placeholder="Name*" required >
           <label for="emailInput"  class="form-label">Email</label>
-          <input type="text" id="emailInput" placeholder="Email address*" required>
+          <input type="email" id="email_id" placeholder="Email address*" required>
           <label for="textareaBox"  class="form-label" >Message</label>
-          <input id="textareaBox" rows="4"placeholder="Message*" required>
-          <button  type="submit" value="send">Send Message</button> 
+          <input id="message" rows="4"placeholder="Message*" required>
+          <button  type="submit" onClick="sendMail()" >Send Message</button> 
           </form>
 
         </div>
@@ -249,7 +232,6 @@
         </div>
     </div>
     <div id="footer"></div>
-    
-</body>
+  </body>
 
 </html>

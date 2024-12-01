@@ -74,24 +74,22 @@ height: 65vh;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-evenly;
-gap: 50px;
+gap: 40px;
 width: 100%;
-height: 165vh;
-margin-top: 5px;
+margin:30px 0px;
 }
 
 .motive-paras1{
 display: flex;
 justify-content: center;
 align-items: center;
-width: 79vw;
+width: 100%;
+padding: 0px 30px;
 gap: 60px;
 }
 
 .motive-paras1 img{
 width: 15vw;
-height: 34vh;
 }
 
 .motive-paras2{
@@ -99,11 +97,11 @@ height: 34vh;
     justify-content: center;
     flex-direction: row-reverse;
     align-items: center;
-    width: 79vw;
+    width: 100%;
+    padding: 0px 30px; 
 }
 .motive-paras2 img{
     width: 15vw;
-    height: 34vh;
     }
 
 .motive-para1{
@@ -127,7 +125,7 @@ color: #263238;
 }
 
 .motive-para1 h3{
-width: 49vw;
+width: 100%;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
@@ -138,7 +136,7 @@ color: #717171;
 }
 
 .motive-para1 p{
-width: 66vw;
+width: 100%;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
@@ -213,6 +211,7 @@ padding-right: 15px;
     flex-direction: column;
     width: 100%;
     gap: 30px;
+    padding: 0px;
 }
 
 
@@ -221,6 +220,8 @@ padding-right: 15px;
     flex-direction: column;
     width: 100%;
     gap: 29px;
+    
+    padding: 0px;
 }
 .motive-para1{
 display: flex;
@@ -299,8 +300,6 @@ text-align: center;
     .motive{
     display: flex;
     flex-direction:column ;
-    justify-content: space-evenly;
-    height: 130vh;
    }
 
     .motive-para1 h1{
