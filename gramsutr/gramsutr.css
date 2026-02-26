@@ -6,9 +6,9 @@
 }
 
 :root {
-    --gs-green: #4CAF4F;
-    --gs-green-dark: #388E3C;
-    --gs-green-light: #E8F5E9;
+    --gs-green: #FF8F00;
+    --gs-green-dark: #E65100;
+    --gs-green-light: #FFF8E1;
     --gs-orange: #FF7043;
     --gs-blue: #42A5F5;
     --gs-purple: #AB47BC;
@@ -76,13 +76,13 @@ body {
 .gs-btn-primary {
     background: var(--gs-green);
     color: var(--gs-white);
-    box-shadow: 0 4px 15px rgba(76, 175, 79, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 143, 0, 0.4);
 }
 
 .gs-btn-primary:hover {
     background: var(--gs-green-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 175, 79, 0.5);
+    box-shadow: 0 6px 20px rgba(255, 143, 0, 0.5);
 }
 
 .gs-btn-secondary {
@@ -110,7 +110,7 @@ body {
     justify-content: space-between;
     min-height: 90vh;
     padding: 60px 80px;
-    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 40%, #43A047 100%);
+    background: linear-gradient(135deg, #E65100 0%, #FF6D00 40%, #FF8F00 100%);
     overflow: hidden;
 }
 
@@ -165,7 +165,7 @@ body {
 }
 
 .gs-hero-content h1 .highlight {
-    color: #A5D6A7;
+    color: #FFD180;
 }
 
 .gs-hero-content h2 {
@@ -304,7 +304,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(76, 175, 79, 0.03) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(255, 143, 0, 0.03) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -475,7 +475,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 2;
-    box-shadow: 0 0 0 6px rgba(76, 175, 79, 0.2);
+    box-shadow: 0 0 0 6px rgba(255, 143, 0, 0.2);
 }
 
 .gs-timeline-dot span {
@@ -711,7 +711,7 @@ body {
 /* ============ FUNDRAISER ============ */
 .gs-fundraiser {
     padding: 100px 80px;
-    background: linear-gradient(135deg, #1B5E20, #2E7D32);
+    background: linear-gradient(135deg, #E65100, #FF6D00);
     color: var(--gs-white);
 }
 
@@ -746,7 +746,7 @@ body {
 }
 
 .gs-raised {
-    color: #A5D6A7;
+    color: #FFD180;
 }
 
 .gs-goal {
@@ -763,7 +763,7 @@ body {
 
 .gs-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #A5D6A7, #4CAF4F);
+    background: linear-gradient(90deg, #FFD180, #FF8F00);
     border-radius: 6px;
     transition: width 1.5s ease;
 }
@@ -781,7 +781,7 @@ body {
 }
 
 .gs-fundraiser .gs-btn-primary:hover {
-    background: #E8F5E9;
+    background: #FFF8E1;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

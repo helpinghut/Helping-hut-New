@@ -10,7 +10,7 @@ function drawPieChart() {
     const innerRadius = 50;
 
     const data = [
-        { value: 40, color: '#4CAF4F', label: 'Education' },
+        { value: 40, color: '#FF8F00', label: 'Education' },
         { value: 30, color: '#FF7043', label: 'Health' },
         { value: 20, color: '#42A5F5', label: 'Logistics' },
         { value: 10, color: '#AB47BC', label: 'Corpus' }
