@@ -680,13 +680,21 @@ body {
 }
 
 .gs-vol-avatar {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: var(--gs-green-light);
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.gs-vol-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 .gs-vol-avatar i {
