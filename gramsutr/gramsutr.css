@@ -679,6 +679,8 @@ body {
     transform: translateY(-4px);
 }
 
+/* ==== VOLUNTEER IMAGE FIX ==== */
+
 .gs-vol-avatar {
     width: 90px;
     height: 90px;
@@ -695,6 +697,19 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Override old icon rule */
+.gs-vol-avatar i {
+    display: none;
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .gs-vol-avatar {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .gs-vol-local {
