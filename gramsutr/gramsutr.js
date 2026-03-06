@@ -33,10 +33,11 @@ function drawPieChart() {
         ctx.fillStyle = slice.color;
         ctx.fill();
 
-        // Label
+        // Label – centred within the donut ring
         const midAngle = startAngle + sliceAngle / 2;
-        const labelX = cx + (radius * 0.65) * Math.cos(midAngle);
-        const labelY = cy + (radius * 0.65) * Math.sin(midAngle);
+        const labelRadius = (innerRadius + radius) / 2;
+        const labelX = cx + labelRadius * Math.cos(midAngle);
+        const labelY = cy + labelRadius * Math.sin(midAngle);
         ctx.fillStyle = '#fff';
         ctx.font = 'bold 13px Poppins, sans-serif';
         ctx.textAlign = 'center';
