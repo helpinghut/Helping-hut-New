@@ -127,21 +127,24 @@ a {
   z-index: 1;
   
 }
-/* Showing the dropdown menu on hover */
-.nav-list:hover .dropdown-menu {
+/* Showing the dropdown menu on hover (focus-within keeps it keyboard/touch reachable) */
+.nav-list:hover .dropdown-menu,
+.nav-list:focus-within .dropdown-menu {
   display: block;
   text-decoration: none;
   list-style: none;
   gap: 40px;
 }
-.nav-list:hover .dropdown-menu1 {
+.nav-list:hover .dropdown-menu1,
+.nav-list:focus-within .dropdown-menu1 {
   display: block;
   text-decoration: none;
   list-style: none;
   gap: 40px;
 }
 
-.nav-list:hover .new {
+.nav-list:hover .new,
+.nav-list:focus-within .new {
   display: flex;
 }
 
@@ -428,6 +431,12 @@ padding-top: 10px;
 
   }
 
+  .nav-list:hover .dropdown-menu1,
+  .nav-list:focus-within .dropdown-menu1 {
+    display: block;
+    text-align: start;
+  }
+
   .dropdown-item {
     display: block;
     text-decoration: none;
@@ -596,6 +605,11 @@ padding-top: 10px;
 
   .nav-list:hover .dropdown-menu,
   .nav-list:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  .nav-list:hover .dropdown-menu1,
+  .nav-list:focus-within .dropdown-menu1 {
     display: block;
   }
 
