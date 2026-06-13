@@ -8,7 +8,7 @@ const GK_WHATSAPP_NUMBER = '919482118208'; // Raghvendra Pratap Singh (organiser
 // ============ SCROLL ANIMATIONS ============
 function gkInitScrollAnimations() {
     const animatables = document.querySelectorAll(
-        '.gk-appeal-card, .gk-why-card, .gk-story-text, .gk-story-deck-wrap, .gk-donate-card, .gk-step-card, .gk-form, .gk-pledge-aside, .gk-contact-card, .gk-map, .gk-donate-note'
+        '.gk-appeal-card, .gk-why-card, .gk-story-text, .gk-story-deck-wrap, .gk-donate-marquee, .gk-step-card, .gk-form, .gk-pledge-aside, .gk-contact-card, .gk-map, .gk-donate-note'
     );
     animatables.forEach(el => el.classList.add('gk-animate'));
 
@@ -322,6 +322,35 @@ function gkInitStory() {
     });
 }
 
+// ============ DONATE MARQUEE ============
+// Continuously slides the "what you can donate" cards. The cards are cloned
+// once so the strip loops seamlessly; --gk-shift is the exact width of one
+// full set, so the loop point is invisible. Pauses on hover. Users who prefer
+// reduced motion get a static, symmetric wrapped grid instead.
+function gkInitDonateMarquee() {
+    const marquee = document.querySelector('.gk-donate-marquee');
+    const track = marquee && marquee.querySelector('.gk-donate-track');
+    if (!track) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce.matches) {
+        marquee.classList.add('gk-donate-static');
+        return;
+    }
+
+    const originals = Array.from(track.children);
+    let shift = 0;
+    originals.forEach(card => {
+        const mr = parseFloat(getComputedStyle(card).marginRight) || 0;
+        shift += card.offsetWidth + mr;
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
+    track.style.setProperty('--gk-shift', shift + 'px');
+    marquee.classList.add('gk-donate-ready');
+}
+
 // ============ INITIALIZE ============
 document.addEventListener('DOMContentLoaded', () => {
     gkInitScrollAnimations();
@@ -329,4 +358,5 @@ document.addEventListener('DOMContentLoaded', () => {
     gkInitWhatsapp();
     gkInitCheckedHighlight();
     gkInitStory();
+    gkInitDonateMarquee();
 });
