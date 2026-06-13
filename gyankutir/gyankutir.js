@@ -8,7 +8,7 @@ const GK_WHATSAPP_NUMBER = '919482118208'; // Raghvendra Pratap Singh (organiser
 // ============ SCROLL ANIMATIONS ============
 function gkInitScrollAnimations() {
     const animatables = document.querySelectorAll(
-        '.gk-appeal-card, .gk-why-card, .gk-gallery-item, .gk-donate-card, .gk-step-card, .gk-form, .gk-pledge-aside, .gk-contact-card, .gk-map, .gk-donate-note'
+        '.gk-appeal-card, .gk-why-card, .gk-story-text, .gk-story-deck-wrap, .gk-donate-card, .gk-step-card, .gk-form, .gk-pledge-aside, .gk-contact-card, .gk-map, .gk-donate-note'
     );
     animatables.forEach(el => el.classList.add('gk-animate'));
 
@@ -188,58 +188,137 @@ function gkInitWhatsapp() {
     });
 }
 
-// ============ PHOTO GALLERY LIGHTBOX ============
-function gkInitGallery() {
-    const items = Array.from(document.querySelectorAll('.gk-gallery-item'));
-    const box = document.getElementById('gkLightbox');
-    if (!items.length || !box) return;
+// ============ STORY PHOTO DECK + LIGHTBOX ============
+// A stack of polaroid-style cards that auto-shuffle one by one: the top card
+// flicks off and tucks to the back of the pile. Pauses on hover/focus, the
+// dots jump to any photo, and tapping a card opens it in the shared lightbox.
+function gkInitStory() {
+    const deck = document.getElementById('gkDeck');
+    if (!deck) return;
 
-    const img = document.getElementById('gkLbImg');
-    const cap = document.getElementById('gkLbCap');
+    const cards = Array.from(deck.querySelectorAll('.gk-deck-card'));
+    const n = cards.length;
+    if (!n) return;
+
+    const dotsWrap = document.getElementById('gkStoryDots');
+    const capEl = document.getElementById('gkStoryCaption');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let order = cards.map((_, i) => i); // order[0] = front of the pile
+    let timer = null;
+    let paused = false;
+
+    // progress dots, one per photo
+    const dots = cards.map((card, i) => {
+        const d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'gk-story-dot';
+        d.setAttribute('role', 'tab');
+        d.setAttribute('aria-label', 'Show: ' + (card.dataset.cap || ('photo ' + (i + 1))));
+        d.addEventListener('click', () => bringToFront(i));
+        if (dotsWrap) dotsWrap.appendChild(d);
+        return d;
+    });
+
+    function render() {
+        order.forEach((id, p) => {
+            const c = cards[id];
+            c.classList.remove('gk-pos-0', 'gk-pos-1', 'gk-pos-2', 'gk-pos-back', 'gk-card-flick');
+            c.classList.add(p === 0 ? 'gk-pos-0' : p === 1 ? 'gk-pos-1' : p === 2 ? 'gk-pos-2' : 'gk-pos-back');
+            c.style.zIndex = String(n - p);
+            c.setAttribute('aria-hidden', p === 0 ? 'false' : 'true');
+            c.tabIndex = p === 0 ? 0 : -1;
+        });
+        const frontId = order[0];
+        if (capEl) {
+            const next = cards[frontId].dataset.cap || '';
+            if (capEl.textContent !== next) {
+                capEl.style.opacity = '0';
+                setTimeout(() => { capEl.textContent = next; capEl.style.opacity = '1'; }, 200);
+            }
+        }
+        dots.forEach((d, i) => d.classList.toggle('gk-dot-active', i === frontId));
+    }
+
+    function advance() {
+        const front = cards[order[0]];
+        front.classList.add('gk-card-flick');
+        front.style.zIndex = String(n + 5);
+        setTimeout(() => {
+            order.push(order.shift()); // front goes to the back of the pile
+            render();
+        }, 430);
+    }
+
+    function bringToFront(id) {
+        const idx = order.indexOf(id);
+        if (idx > 0) order = order.slice(idx).concat(order.slice(0, idx));
+        render();
+        restart();
+    }
+
+    function start() {
+        if (reduce.matches || timer) return;
+        timer = setInterval(() => { if (!paused) advance(); }, 3200);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+
+    // pause while hovered / focused so the pile is readable and clickable
+    deck.addEventListener('mouseenter', () => { paused = true; });
+    deck.addEventListener('mouseleave', () => { paused = false; });
+    deck.addEventListener('focusin', () => { paused = true; });
+    deck.addEventListener('focusout', () => { paused = false; });
+
+    render();
+    start();
+
+    // ----- lightbox (reuses the shared overlay) -----
+    const box = document.getElementById('gkLightbox');
+    if (!box) return;
+    const lbImg = document.getElementById('gkLbImg');
+    const lbCap = document.getElementById('gkLbCap');
     const btnClose = document.getElementById('gkLbClose');
     const btnPrev = document.getElementById('gkLbPrev');
     const btnNext = document.getElementById('gkLbNext');
-    let current = 0;
+    let lbIndex = 0;
     let lastFocused = null;
 
-    function show(index) {
-        current = (index + items.length) % items.length;
-        const item = items[current];
-        img.src = item.dataset.full;
-        img.alt = item.querySelector('img') ? item.querySelector('img').alt : '';
-        cap.textContent = item.dataset.cap || '';
+    function lbShow(i) {
+        lbIndex = (i + n) % n;
+        const c = cards[lbIndex];
+        lbImg.src = c.dataset.full;
+        const im = c.querySelector('img');
+        lbImg.alt = im ? im.alt : '';
+        lbCap.textContent = c.dataset.cap || '';
     }
-
-    function open(index) {
+    function lbOpen(i) {
         lastFocused = document.activeElement;
-        show(index);
+        paused = true;
+        lbShow(i);
         box.hidden = false;
         document.body.style.overflow = 'hidden';
         btnClose.focus();
     }
-
-    function close() {
+    function lbClose() {
         box.hidden = true;
         document.body.style.overflow = '';
-        img.src = '';
+        lbImg.src = '';
+        paused = false;
         if (lastFocused) lastFocused.focus();
     }
 
-    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
-    btnClose.addEventListener('click', close);
-    btnPrev.addEventListener('click', () => show(current - 1));
-    btnNext.addEventListener('click', () => show(current + 1));
-
-    // click the dimmed backdrop (but not the image/buttons) to close
+    cards.forEach((c, i) => c.addEventListener('click', () => lbOpen(i)));
+    btnClose.addEventListener('click', lbClose);
+    btnPrev.addEventListener('click', () => lbShow(lbIndex - 1));
+    btnNext.addEventListener('click', () => lbShow(lbIndex + 1));
     box.addEventListener('click', (e) => {
-        if (e.target === box || e.target.classList.contains('gk-lb-figure')) close();
+        if (e.target === box || e.target.classList.contains('gk-lb-figure')) lbClose();
     });
-
     document.addEventListener('keydown', (e) => {
         if (box.hidden) return;
-        if (e.key === 'Escape') close();
-        else if (e.key === 'ArrowLeft') show(current - 1);
-        else if (e.key === 'ArrowRight') show(current + 1);
+        if (e.key === 'Escape') lbClose();
+        else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+        else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
     });
 }
 
@@ -249,5 +328,5 @@ document.addEventListener('DOMContentLoaded', () => {
     gkInitForm();
     gkInitWhatsapp();
     gkInitCheckedHighlight();
-    gkInitGallery();
+    gkInitStory();
 });

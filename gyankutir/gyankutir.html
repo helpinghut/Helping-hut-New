@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../navbar/navbar.css">
     <link rel="stylesheet" href="../footer/footer.css">
@@ -197,38 +198,48 @@
         </div>
     </section>
 
-    <!-- ============ PHOTO GALLERY ============ -->
-    <section class="gk-gallery">
+    <!-- ============ STORY / PHOTO DECK ============ -->
+    <section class="gk-story">
         <div class="gk-section-header">
             <h2>The Children of <span class="highlight">Gopalpura</span></h2>
-            <p class="gk-section-sub">From the GramSutr camp to a permanent library: these are the village and the children GyanKutir is built for.</p>
             <div class="gk-underline"></div>
         </div>
-        <div class="gk-gallery-grid">
-            <button type="button" class="gk-gallery-item gk-g-half" data-full="images/gopalpura-children-kits.jpg" data-cap="Children at Gopalpura's primary school with kits from the GramSutr camp.">
-                <img src="images/gopalpura-children-kits.jpg" alt="Children at Gopalpura's primary school holding Helping Hut kits" loading="lazy">
-                <span class="gk-gallery-cap">Children at Gopalpura's primary school with kits from the GramSutr camp.</span>
-            </button>
-            <button type="button" class="gk-gallery-item gk-g-half" data-full="images/gopalpura-community.jpg" data-cap="Almost the whole village turned out for the GramSutr Gopalpura camp.">
-                <img src="images/gopalpura-community.jpg" alt="A large gathering of children and villagers at the GramSutr Gopalpura camp" loading="lazy">
-                <span class="gk-gallery-cap">Almost the whole village turned out for the GramSutr Gopalpura camp.</span>
-            </button>
-            <button type="button" class="gk-gallery-item gk-g-third" data-full="images/gs-team-banner.jpg" data-cap="The Helping Hut team at the GramSutr Gopalpura Edition.">
-                <img src="images/gs-team-banner.jpg" alt="The Helping Hut team holding the GyanKutir banner in a field at Gopalpura" loading="lazy">
-                <span class="gk-gallery-cap">The Helping Hut team at the GramSutr Gopalpura Edition.</span>
-            </button>
-            <button type="button" class="gk-gallery-item gk-g-third" data-full="images/gs-volunteers-hut.jpg" data-cap="Volunteers gather beside a village home in Gopalpura.">
-                <img src="images/gs-volunteers-hut.jpg" alt="GramSutr volunteers gathered beside a village home in Gopalpura" loading="lazy">
-                <span class="gk-gallery-cap">Volunteers gather beside a village home in Gopalpura.</span>
-            </button>
-            <button type="button" class="gk-gallery-item gk-g-third" data-full="images/gs-village-street.jpg" data-cap="Through the lanes of Gopalpura village.">
-                <img src="images/gs-village-street.jpg" alt="The team walking through the village market street in Gopalpura" loading="lazy">
-                <span class="gk-gallery-cap">Through the lanes of Gopalpura village.</span>
-            </button>
-            <button type="button" class="gk-gallery-item gk-g-full" data-full="images/gs-team-panorama.jpg" data-cap="GramSutr volunteers across the fields of Gopalpura.">
-                <img src="images/gs-team-panorama.jpg" alt="Wide panorama of GramSutr volunteers standing across the fields of Gopalpura" loading="lazy">
-                <span class="gk-gallery-cap">GramSutr volunteers across the fields of Gopalpura.</span>
-            </button>
+        <div class="gk-story-grid">
+            <div class="gk-story-text">
+                <p class="gk-story-lead">GyanKutir grew out of the <a href="../gramsutr/gramsutr.html">GramSutr Gopalpura camp</a>. These are the faces behind it: the children waiting for a place to read, the whole village that turned up, and the volunteers who lit the spark.</p>
+                <p class="gk-story-caption" id="gkStoryCaption">Children at Gopalpura's primary school with kits from the GramSutr camp.</p>
+                <div class="gk-story-dots" id="gkStoryDots" role="tablist" aria-label="Choose a photo"></div>
+                <a href="#pledge" class="gk-btn gk-btn-primary gk-story-btn"><i class="fa-solid fa-book-open"></i> Help Fill the Shelves</a>
+            </div>
+            <div class="gk-story-deck-wrap">
+                <div class="gk-deck" id="gkDeck">
+                    <button type="button" class="gk-deck-card" data-full="images/gopalpura-children-kits.jpg" data-cap="Children at Gopalpura's primary school with kits from the GramSutr camp.">
+                        <img src="images/gopalpura-children-kits.jpg" alt="Children at Gopalpura's primary school holding Helping Hut kits" loading="lazy">
+                        <span class="gk-deck-tag">Gopalpura kids</span>
+                    </button>
+                    <button type="button" class="gk-deck-card" data-full="images/gopalpura-community.jpg" data-cap="Almost the whole village turned out for the GramSutr Gopalpura camp.">
+                        <img src="images/gopalpura-community.jpg" alt="A large gathering of children and villagers at the GramSutr Gopalpura camp" loading="lazy">
+                        <span class="gk-deck-tag">The whole village</span>
+                    </button>
+                    <button type="button" class="gk-deck-card" data-full="images/gs-team-banner.jpg" data-cap="The Helping Hut team at the GramSutr Gopalpura Edition.">
+                        <img src="images/gs-team-banner.jpg" alt="The Helping Hut team holding the GyanKutir banner in a field at Gopalpura" loading="lazy">
+                        <span class="gk-deck-tag">Team GramSutr</span>
+                    </button>
+                    <button type="button" class="gk-deck-card" data-full="images/gs-volunteers-hut.jpg" data-cap="Volunteers gather beside a village home in Gopalpura.">
+                        <img src="images/gs-volunteers-hut.jpg" alt="GramSutr volunteers gathered beside a village home in Gopalpura" loading="lazy">
+                        <span class="gk-deck-tag">Our volunteers</span>
+                    </button>
+                    <button type="button" class="gk-deck-card" data-full="images/gs-village-street.jpg" data-cap="Through the lanes of Gopalpura village.">
+                        <img src="images/gs-village-street.jpg" alt="The team walking through the village market street in Gopalpura" loading="lazy">
+                        <span class="gk-deck-tag">Village lanes</span>
+                    </button>
+                    <button type="button" class="gk-deck-card" data-full="images/gs-team-panorama.jpg" data-cap="GramSutr volunteers across the fields of Gopalpura.">
+                        <img src="images/gs-team-panorama.jpg" alt="Wide panorama of GramSutr volunteers standing across the fields of Gopalpura" loading="lazy">
+                        <span class="gk-deck-tag">Out in the fields</span>
+                    </button>
+                </div>
+                <p class="gk-deck-hint"><i class="fa-solid fa-hand-pointer"></i> Tap a photo to enlarge</p>
+            </div>
         </div>
     </section>
 
