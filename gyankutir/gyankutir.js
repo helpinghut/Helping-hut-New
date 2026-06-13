@@ -8,7 +8,7 @@ const GK_WHATSAPP_NUMBER = '919482118208'; // Raghvendra Pratap Singh (organiser
 // ============ SCROLL ANIMATIONS ============
 function gkInitScrollAnimations() {
     const animatables = document.querySelectorAll(
-        '.gk-appeal-card, .gk-why-card, .gk-donate-card, .gk-step-card, .gk-form, .gk-pledge-aside, .gk-contact-card, .gk-map, .gk-donate-note'
+        '.gk-appeal-card, .gk-why-card, .gk-gallery-item, .gk-donate-card, .gk-step-card, .gk-form, .gk-pledge-aside, .gk-contact-card, .gk-map, .gk-donate-note'
     );
     animatables.forEach(el => el.classList.add('gk-animate'));
 
@@ -188,10 +188,66 @@ function gkInitWhatsapp() {
     });
 }
 
+// ============ PHOTO GALLERY LIGHTBOX ============
+function gkInitGallery() {
+    const items = Array.from(document.querySelectorAll('.gk-gallery-item'));
+    const box = document.getElementById('gkLightbox');
+    if (!items.length || !box) return;
+
+    const img = document.getElementById('gkLbImg');
+    const cap = document.getElementById('gkLbCap');
+    const btnClose = document.getElementById('gkLbClose');
+    const btnPrev = document.getElementById('gkLbPrev');
+    const btnNext = document.getElementById('gkLbNext');
+    let current = 0;
+    let lastFocused = null;
+
+    function show(index) {
+        current = (index + items.length) % items.length;
+        const item = items[current];
+        img.src = item.dataset.full;
+        img.alt = item.querySelector('img') ? item.querySelector('img').alt : '';
+        cap.textContent = item.dataset.cap || '';
+    }
+
+    function open(index) {
+        lastFocused = document.activeElement;
+        show(index);
+        box.hidden = false;
+        document.body.style.overflow = 'hidden';
+        btnClose.focus();
+    }
+
+    function close() {
+        box.hidden = true;
+        document.body.style.overflow = '';
+        img.src = '';
+        if (lastFocused) lastFocused.focus();
+    }
+
+    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', () => show(current - 1));
+    btnNext.addEventListener('click', () => show(current + 1));
+
+    // click the dimmed backdrop (but not the image/buttons) to close
+    box.addEventListener('click', (e) => {
+        if (e.target === box || e.target.classList.contains('gk-lb-figure')) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (box.hidden) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(current - 1);
+        else if (e.key === 'ArrowRight') show(current + 1);
+    });
+}
+
 // ============ INITIALIZE ============
 document.addEventListener('DOMContentLoaded', () => {
     gkInitScrollAnimations();
     gkInitForm();
     gkInitWhatsapp();
     gkInitCheckedHighlight();
+    gkInitGallery();
 });

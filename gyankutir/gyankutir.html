@@ -197,6 +197,41 @@
         </div>
     </section>
 
+    <!-- ============ PHOTO GALLERY ============ -->
+    <section class="gk-gallery">
+        <div class="gk-section-header">
+            <h2>The Children of <span class="highlight">Gopalpura</span></h2>
+            <p class="gk-section-sub">From the GramSutr camp to a permanent library: these are the village and the children GyanKutir is built for.</p>
+            <div class="gk-underline"></div>
+        </div>
+        <div class="gk-gallery-grid">
+            <button type="button" class="gk-gallery-item gk-g-half" data-full="images/gopalpura-children-kits.jpg" data-cap="Children at Gopalpura's primary school with kits from the GramSutr camp.">
+                <img src="images/gopalpura-children-kits.jpg" alt="Children at Gopalpura's primary school holding Helping Hut kits" loading="lazy">
+                <span class="gk-gallery-cap">Children at Gopalpura's primary school with kits from the GramSutr camp.</span>
+            </button>
+            <button type="button" class="gk-gallery-item gk-g-half" data-full="images/gopalpura-community.jpg" data-cap="Almost the whole village turned out for the GramSutr Gopalpura camp.">
+                <img src="images/gopalpura-community.jpg" alt="A large gathering of children and villagers at the GramSutr Gopalpura camp" loading="lazy">
+                <span class="gk-gallery-cap">Almost the whole village turned out for the GramSutr Gopalpura camp.</span>
+            </button>
+            <button type="button" class="gk-gallery-item gk-g-third" data-full="images/gs-team-banner.jpg" data-cap="The Helping Hut team at the GramSutr Gopalpura Edition.">
+                <img src="images/gs-team-banner.jpg" alt="The Helping Hut team holding the GyanKutir banner in a field at Gopalpura" loading="lazy">
+                <span class="gk-gallery-cap">The Helping Hut team at the GramSutr Gopalpura Edition.</span>
+            </button>
+            <button type="button" class="gk-gallery-item gk-g-third" data-full="images/gs-volunteers-hut.jpg" data-cap="Volunteers gather beside a village home in Gopalpura.">
+                <img src="images/gs-volunteers-hut.jpg" alt="GramSutr volunteers gathered beside a village home in Gopalpura" loading="lazy">
+                <span class="gk-gallery-cap">Volunteers gather beside a village home in Gopalpura.</span>
+            </button>
+            <button type="button" class="gk-gallery-item gk-g-third" data-full="images/gs-village-street.jpg" data-cap="Through the lanes of Gopalpura village.">
+                <img src="images/gs-village-street.jpg" alt="The team walking through the village market street in Gopalpura" loading="lazy">
+                <span class="gk-gallery-cap">Through the lanes of Gopalpura village.</span>
+            </button>
+            <button type="button" class="gk-gallery-item gk-g-full" data-full="images/gs-team-panorama.jpg" data-cap="GramSutr volunteers across the fields of Gopalpura.">
+                <img src="images/gs-team-panorama.jpg" alt="Wide panorama of GramSutr volunteers standing across the fields of Gopalpura" loading="lazy">
+                <span class="gk-gallery-cap">GramSutr volunteers across the fields of Gopalpura.</span>
+            </button>
+        </div>
+    </section>
+
     <!-- ============ WHAT YOU CAN DONATE ============ -->
     <section class="gk-donate">
         <div class="gk-section-header">
@@ -385,6 +420,17 @@
         <p>One book from your shelf can become the first book a child in Gopalpura ever reads. Give it a second life.</p>
         <a href="#pledge" class="gk-btn gk-btn-light"><i class="fa-solid fa-book-open"></i> Pledge a Donation</a>
     </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="gk-lightbox" id="gkLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <button type="button" class="gk-lb-close" id="gkLbClose" aria-label="Close photo viewer"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="gk-lb-nav gk-lb-prev" id="gkLbPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+        <figure class="gk-lb-figure">
+            <img id="gkLbImg" src="" alt="">
+            <figcaption id="gkLbCap"></figcaption>
+        </figure>
+        <button type="button" class="gk-lb-nav gk-lb-next" id="gkLbNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
 
     <div id="footer"></div>
 </body>
