@@ -229,6 +229,12 @@ section {
     margin: 18px 0 30px;
 }
 
+.gk-hero-quote {
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
 .gk-hero-btns {
     display: flex;
     flex-wrap: wrap;

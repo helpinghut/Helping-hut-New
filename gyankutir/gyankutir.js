@@ -108,7 +108,7 @@ function gkInitForm() {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    _subject: 'New Gyan Kutir donation pledge: ' + data.name,
+                    _subject: 'New GyanKutir donation pledge: ' + data.name,
                     _template: 'table',
                     _captcha: 'false',
                     'Name': data.name,
@@ -176,7 +176,7 @@ function gkInitWhatsapp() {
 
     btn.addEventListener('click', () => {
         const data = gkGetFormData();
-        let text = 'Namaste! I want to donate to the Gyan Kutir library in Gopalpura.';
+        let text = 'Namaste! I want to donate to the GyanKutir library in Gopalpura.';
         if (data.name) text += '\nName: ' + data.name;
         if (data.items.length) text += '\nItems: ' + data.items.join(', ');
         if (data.details) text += '\nDetails: ' + data.details;
